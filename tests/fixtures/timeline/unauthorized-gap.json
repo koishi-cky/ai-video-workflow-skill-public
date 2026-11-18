@@ -1,0 +1,8 @@
+{
+  "timelineMode": "initial",
+  "project": {"fps": 30, "durationMs": 4200},
+  "shots": [
+    {"id": "S001", "order": 1, "startMs": 0, "endMs": 2000},
+    {"id": "S002", "order": 2, "startMs": 2200, "endMs": 4200}
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "shots": [
+    {"id": "S001", "order": 1, "narration": "角色指出第一步。", "visualClass": "mixed", "aRollSignature": "mixed-host-left", "artifactHash": "sha256:mixed-a1", "viewpoint": "host", "framing": "wide", "position": "left", "action": "pointing", "gaze": "diagram", "environment": "studio", "templateId": "mixed-flow", "layoutArchetype": "timeline", "motionFamily": "draw-on", "visualMetaphor": "a route", "keywordSet": ["第一步", "明确目标"], "textMode": "keywords", "onScreenText": "第一步 · 明确目标", "transitionAnchor": "gold-dot"},
+    {"id": "S002", "order": 2, "narration": "角色指出第二步。", "visualClass": "mixed", "aRollSignature": "mixed-host-left", "artifactHash": "sha256:mixed-a2", "viewpoint": "over-shoulder", "framing": "close", "position": "right", "action": "typing", "gaze": "monitor", "environment": "office", "templateId": "mixed-flow", "layoutArchetype": "dashboard", "motionFamily": "cursor-follow", "visualMetaphor": "a control room", "keywordSet": ["第二步", "验证结果"], "textMode": "keywords", "onScreenText": "第二步 · 验证结果", "transitionAnchor": "result-dot"}
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "shots": [
+    {"id": "S001", "order": 1, "startMs": 0, "status": "approved", "currentVersion": "", "approvedVersion": ""}
+  ],
+  "music": {"approved": true},
+  "finalAssembly": {
+    "approved": true,
+    "phrase": "确认合成",
+    "manifest": [{"shotId": "S001", "version": "v1", "order": 1}]
+  }
+}

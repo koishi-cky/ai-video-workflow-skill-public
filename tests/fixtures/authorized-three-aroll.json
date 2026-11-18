@@ -1,0 +1,15 @@
+{
+  "shots": [
+    { "id": "S001", "order": 1, "startMs": 0, "visualClass": "b-roll" },
+    { "id": "S002", "order": 2, "startMs": 1000, "visualClass": "a-roll" },
+    { "id": "S003", "order": 3, "startMs": 2000, "visualClass": "a-roll" },
+    { "id": "S004", "order": 4, "startMs": 3000, "visualClass": "a-roll" }
+  ],
+  "authorizations": [
+    {
+      "shotIds": ["S002", "S003", "S004"],
+      "approved": true,
+      "reason": "同一段人物经历需要保持情绪和空间连续性，用户已明确授权。"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "shots": [
+    {"id":"S001","narration":"先完成第一步，再完成第二步。","visualClass":"b-roll","templateId":"card-a","layoutArchetype":"timeline","motionFamily":"draw-on","visualMetaphor":"a route map","keywordSet":["第一步","第二步"],"transitionAnchor":"route-end"}
+  ]
+}

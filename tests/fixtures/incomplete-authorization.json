@@ -1,0 +1,14 @@
+{
+  "shots": [
+    { "id": "S001", "order": 1, "startMs": 0, "visualClass": "b-roll" },
+    { "id": "S002", "order": 2, "startMs": 1000, "visualClass": "b-roll" },
+    { "id": "S003", "order": 3, "startMs": 2000, "visualClass": "b-roll" }
+  ],
+  "authorizations": [
+    {
+      "shotIds": ["S001", "S002", "S003"],
+      "approved": true,
+      "reason": ""
+    }
+  ]
+}

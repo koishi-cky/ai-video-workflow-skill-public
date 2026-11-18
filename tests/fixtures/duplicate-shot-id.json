@@ -1,0 +1,6 @@
+{
+  "shots": [
+    {"id": "S001", "order": 1, "startMs": 0, "visualClass": "a-roll"},
+    {"id": "S001", "order": 2, "startMs": 1000, "visualClass": "b-roll"}
+  ]
+}

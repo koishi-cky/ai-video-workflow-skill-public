@@ -1,0 +1,6 @@
+{
+  "shots": [
+    {"id":"S001","visualClass":"a-roll","aRollSignature":"host-left-wide","artifactHash":"sha256:a1","viewpoint":"eye-level","framing":"wide","position":"left","action":"explaining","gaze":"camera","environment":"studio"},
+    {"id":"S002","visualClass":"a-roll","aRollSignature":"host-left-medium","artifactHash":"sha256:a2","viewpoint":"eye-level","framing":"medium","position":"left","action":"explaining","gaze":"camera","environment":"studio"}
+  ]
+}

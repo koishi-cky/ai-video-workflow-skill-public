@@ -1,0 +1,9 @@
+{
+  "previewManifestCurrent": true,
+  "previewManifest": [
+    {"shotId": "S999", "version": "v1", "status": "waiting_for_approval", "order": 1}
+  ],
+  "shots": [
+    {"id": "S001", "currentVersion": "v1", "status": "waiting_for_approval"}
+  ]
+}

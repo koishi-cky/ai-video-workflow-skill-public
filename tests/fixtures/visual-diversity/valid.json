@@ -1,0 +1,70 @@
+{
+  "narration": "让智能体先分析需求，再执行清晰可验证的操作。",
+  "shots": [
+    {
+      "id": "S001",
+      "order": 1,
+      "narration": "智能体先理解目标。",
+      "visualClass": "a-roll",
+      "aRollSignature": "host-wide-left-explain-camera-studio",
+      "artifactHash": "sha256:a1",
+      "viewpoint": "eye-level",
+      "framing": "wide",
+      "position": "left",
+      "action": "explaining",
+      "gaze": "camera",
+      "environment": "studio"
+    },
+    {
+      "id": "S002",
+      "order": 2,
+      "narration": "再执行清晰的操作。",
+      "visualClass": "a-roll",
+      "aRollSignature": "host-close-right-point-monitor-office",
+      "artifactHash": "sha256:a2",
+      "viewpoint": "over-shoulder",
+      "framing": "close",
+      "position": "right",
+      "action": "pointing",
+      "gaze": "monitor",
+      "environment": "office"
+    },
+    {
+      "id": "S003",
+      "order": 3,
+      "narration": "先分析需求，再执行操作。",
+      "visualClass": "b-roll",
+      "templateId": "workflow-map-v1",
+      "layoutArchetype": "timeline",
+      "motionFamily": "draw-on",
+      "visualMetaphor": "a route map",
+      "keywordSet": ["需求分析", "可验证执行"],
+      "textMode": "keywords",
+      "onScreenText": "需求分析 · 可验证执行",
+      "transitionAnchor": "workflow-end"
+    },
+    {
+      "id": "S004",
+      "order": 4,
+      "narration": "界面展示完整任务说明。",
+      "visualClass": "b-roll",
+      "subtype": "interface-demo",
+      "templateId": "agent-console-v1",
+      "layoutArchetype": "dashboard",
+      "motionFamily": "cursor-follow",
+      "visualMetaphor": "an agent control room",
+      "keywordSet": ["任务队列", "执行结果"],
+      "textMode": "source-content",
+      "onScreenText": "让智能体先分析需求，再执行清晰可验证的操作。",
+      "sourceContentPurpose": "展示真实的任务说明如何出现在工作区中",
+      "transitionAnchor": "result-row",
+      "interfaceStructure": {
+        "windowShell": true,
+        "contextRegion": true,
+        "activeWorkspace": true,
+        "interaction": true,
+        "stateFeedback": true
+      }
+    }
+  ]
+}

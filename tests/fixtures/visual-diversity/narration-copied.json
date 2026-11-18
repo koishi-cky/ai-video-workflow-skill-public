@@ -1,0 +1,7 @@
+{
+  "narration":"让智能体先分析需求，再执行清晰可验证的操作。",
+  "shots":[
+    {"id":"S001","narration":"让智能体先分析需求，再执行清晰可验证的操作。","visualClass":"b-roll","templateId":"card-a","layoutArchetype":"timeline","motionFamily":"draw-on","visualMetaphor":"a route map","keywordSet":["需求分析","执行操作"],"textMode":"keywords","onScreenText":"让智能体先分析需求，再执行清晰可验证的操作。","transitionAnchor":"route-end"},
+    {"id":"S002","narration":"让智能体先分析需求，再执行清晰可验证的操作。","visualClass":"b-roll","templateId":"card-b","layoutArchetype":"dashboard","motionFamily":"cursor-follow","visualMetaphor":"a control room","keywordSet":["需求分析","执行操作"],"textMode":"keywords","onScreenText":"让智能体先分析需求，再执行清晰可验证的","transitionAnchor":"result-row"}
+  ]
+}

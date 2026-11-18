@@ -1,0 +1,12 @@
+{
+  "previewManifestCurrent": true,
+  "previewManifest": [
+    {"shotId": "S001", "version": "v1", "status": "waiting_for_approval", "order": 1}
+  ],
+  "adminDirective": {
+    "approved": true,
+    "action": "approve-preview-batch",
+    "shotIds": ["S001"]
+  },
+  "shots": []
+}

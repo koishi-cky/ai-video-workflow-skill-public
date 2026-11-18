@@ -1,0 +1,20 @@
+{
+  "shots": [
+    {"id": "H001", "order": 0, "startMs": 0, "status": "approved", "currentVersion": "v2", "approvedVersion": "v2"},
+    {"id": "S001", "order": 1, "startMs": 1000, "status": "approved", "currentVersion": "v3", "approvedVersion": "v3"}
+  ],
+  "music": {"selectedTrackId": "music-1", "approved": true},
+  "actionAuthorization": {
+    "approved": true,
+    "action": "render-final",
+    "shotIds": ["H001", "S001"]
+  },
+  "finalAssembly": {
+    "approved": true,
+    "phrase": "确认合成",
+    "manifest": [
+      {"shotId": "H001", "version": "v2", "order": 0},
+      {"shotId": "S001", "version": "v3", "order": 1}
+    ]
+  }
+}

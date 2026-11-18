@@ -1,0 +1,11 @@
+{
+  "voice": {"confirmed": false},
+  "characterIp": {"confirmed": false},
+  "cta": {"confirmed": false},
+  "requiredImages": {"confirmed": false},
+  "alignment": {"verified": false},
+  "initialArrangement": {"displayed": true, "approved": true},
+  "shots": [
+    {"id": "S001", "order": 1, "startMs": 0, "status": "planned"}
+  ]
+}

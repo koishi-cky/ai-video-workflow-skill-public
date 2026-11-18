@@ -1,0 +1,17 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+node_modules/
+.git/
+.worktrees/
+.superpowers/
+docs/superpowers/
+tests/pressure/
+renders/
+dist/
+*.mp4
+*.mov
+*.webm
+*.wav
+*.mp3
+*.log

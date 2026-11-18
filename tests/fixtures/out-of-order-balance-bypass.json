@@ -1,0 +1,9 @@
+{
+  "shots": [
+    {"id": "S001", "order": 1, "startMs": 0, "visualClass": "b-roll"},
+    {"id": "S004", "order": 4, "startMs": 3000, "visualClass": "a-roll"},
+    {"id": "S002", "order": 2, "startMs": 1000, "visualClass": "b-roll"},
+    {"id": "S005", "order": 5, "startMs": 4000, "visualClass": "mixed"},
+    {"id": "S003", "order": 3, "startMs": 2000, "visualClass": "b-roll"}
+  ]
+}

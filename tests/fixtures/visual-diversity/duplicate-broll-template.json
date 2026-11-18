@@ -1,0 +1,6 @@
+{
+  "shots": [
+    {"id":"S001","narration":"先完成第一步和第二步。","visualClass":"b-roll","templateId":"reused-card","layoutArchetype":"timeline","motionFamily":"draw-on","visualMetaphor":"a route map","keywordSet":["第一步","第二步"],"textMode":"keywords","onScreenText":"第一步 · 第二步","transitionAnchor":"route-dot"},
+    {"id":"S002","narration":"再完成第三步和第四步。","visualClass":"b-roll","templateId":"reused-card","layoutArchetype":"dashboard","motionFamily":"cursor-follow","visualMetaphor":"a control room","keywordSet":["第三步","第四步"],"textMode":"keywords","onScreenText":"第三步 · 第四步","transitionAnchor":"result-dot"}
+  ]
+}

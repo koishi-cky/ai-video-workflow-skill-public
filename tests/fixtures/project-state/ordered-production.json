@@ -1,0 +1,13 @@
+{
+  "voice": {"confirmed": true},
+  "characterIp": {"confirmed": true},
+  "cta": {"confirmed": true},
+  "requiredImages": {"confirmed": true},
+  "alignment": {"verified": true},
+  "initialArrangement": {"displayed": true, "approved": true},
+  "shots": [
+    {"id": "S002", "order": 2, "startMs": 4000, "status": "planned"},
+    {"id": "H001", "order": 0, "startMs": 0, "status": "waiting_for_approval"},
+    {"id": "S001", "order": 1, "startMs": 1000, "status": "planned"}
+  ]
+}

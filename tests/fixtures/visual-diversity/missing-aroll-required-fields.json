@@ -1,0 +1,5 @@
+{
+  "shots": [
+    {"id": "S001", "order": 1, "narration": "角色介绍当前目标。", "visualClass": "a-roll", "viewpoint": "host"}
+  ]
+}

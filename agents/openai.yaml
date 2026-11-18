@@ -1,0 +1,7 @@
+interface:
+  display_name: "AI Video Workflow"
+  short_description: "Create approval-gated horizontal AI explainer videos"
+  brand_color: "#C8AD62"
+  default_prompt: "Use $ai-video-workflow to turn my theme and complete script into a visual arrangement and representative video samples."
+policy:
+  allow_implicit_invocation: true

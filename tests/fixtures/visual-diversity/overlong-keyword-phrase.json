@@ -1,0 +1,17 @@
+{
+  "shots": [
+    {
+      "id": "S001",
+      "narration": "关键词应该保持简洁。",
+      "visualClass": "b-roll",
+      "templateId": "card-a",
+      "layoutArchetype": "timeline",
+      "motionFamily": "draw-on",
+      "visualMetaphor": "a route map",
+      "keywordSet": ["这是超过八个汉字的关键词", "执行结果"],
+      "textMode": "keywords",
+      "onScreenText": "关键词 · 执行结果",
+      "transitionAnchor": "keyword-chip"
+    }
+  ]
+}

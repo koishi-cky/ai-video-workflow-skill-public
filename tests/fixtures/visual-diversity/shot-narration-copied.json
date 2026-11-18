@@ -1,0 +1,6 @@
+{
+  "narration": "这段全片旁白与当前镜头不同。",
+  "shots": [
+    {"id": "S001", "order": 1, "narration": "让智能体先分析需求，再执行清晰可验证的操作。", "visualClass": "b-roll", "templateId": "card-a", "layoutArchetype": "timeline", "motionFamily": "draw-on", "visualMetaphor": "a route map", "keywordSet": ["需求分析", "执行操作"], "textMode": "keywords", "onScreenText": "让智能体先分析需求，再执行清晰可验证的操作。", "transitionAnchor": "gold-dot"}
+  ]
+}

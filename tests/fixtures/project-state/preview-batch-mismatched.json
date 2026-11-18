@@ -1,0 +1,16 @@
+{
+  "previewManifestCurrent": true,
+  "previewManifest": [
+    {"shotId": "S001", "version": "v3", "status": "waiting_for_approval", "order": 1},
+    {"shotId": "S002", "version": "v2", "status": "changes_requested", "order": 2}
+  ],
+  "adminDirective": {
+    "approved": true,
+    "action": "approve-preview-batch",
+    "shotIds": ["S002", "S001"]
+  },
+  "shots": [
+    {"id": "S001", "currentVersion": "v3", "status": "waiting_for_approval"},
+    {"id": "S002", "currentVersion": "v2", "status": "changes_requested"}
+  ]
+}

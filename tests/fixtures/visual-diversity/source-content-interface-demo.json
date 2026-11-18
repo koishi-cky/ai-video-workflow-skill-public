@@ -1,0 +1,6 @@
+{
+  "narration":"让智能体先分析需求，再执行清晰可验证的操作。",
+  "shots":[
+    {"id":"S001","narration":"让智能体先分析需求，再执行清晰可验证的操作。","visualClass":"b-roll","subtype":"interface-demo","templateId":"agent-console-v1","layoutArchetype":"dashboard","motionFamily":"cursor-follow","visualMetaphor":"a control room","keywordSet":["任务队列","执行结果"],"textMode":"source-content","onScreenText":"让智能体先分析需求，再执行清晰可验证的操作。","sourceContentPurpose":"展示真实任务说明","transitionAnchor":"result-row","interfaceStructure":{"windowShell":true,"contextRegion":true,"activeWorkspace":true,"interaction":true,"stateFeedback":true}}
+  ]
+}

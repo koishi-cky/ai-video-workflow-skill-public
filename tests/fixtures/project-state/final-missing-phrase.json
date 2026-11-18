@@ -1,0 +1,5 @@
+{
+  "shots": [{"id": "S001", "order": 1, "startMs": 0, "status": "approved"}],
+  "music": {"approved": true},
+  "finalAssembly": {"approved": true, "phrase": "确认"}
+}

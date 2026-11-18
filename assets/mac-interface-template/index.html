@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mac Interface Demo</title>
+  <style>
+    :root{--bg:#07100c;--shell:#111814;--panel:#161f1a;--panel2:#1b2520;--line:#334038;--fg:#f2efe5;--muted:#a9b2aa;--accent:#c8ad62;--accent2:#e5cf91;--red:#ff5f57;--yellow:#febc2e;--green:#28c840}
+    @font-face{font-family:PublicCN;src:local("Microsoft YaHei"),local("PingFang SC"),local("Noto Sans CJK SC");font-display:swap}
+    *{box-sizing:border-box}html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--bg);font-family:PublicCN,Arial,sans-serif;color:var(--fg)}
+    .clip{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--bg)}
+    .ambient{position:absolute;inset:0;background:radial-gradient(circle at 76% 48%,rgba(200,173,98,.16),rgba(7,16,12,0) 38%),radial-gradient(circle at 20% 90%,rgba(80,113,91,.16),rgba(7,16,12,0) 34%)}
+    .vignette{position:absolute;inset:0;background:radial-gradient(circle at center,transparent 45%,rgba(2,6,4,.56) 100%);pointer-events:none}
+    .window{position:absolute;left:110px;top:70px;width:1700px;height:940px;border:2px solid #36423a;border-radius:28px;overflow:hidden;background:var(--shell);box-shadow:0 34px 90px rgba(0,0,0,.54),0 0 0 1px rgba(229,207,145,.06)}
+    .titlebar{height:92px;display:grid;grid-template-columns:260px 1fr 260px;align-items:center;padding:0 32px;border-bottom:2px solid #2b3730;background:#131b17;position:relative;z-index:4}
+    .lights{display:flex;gap:15px}.light{width:18px;height:18px;border-radius:50%;box-shadow:inset 0 -2px 2px rgba(0,0,0,.22)}.red{background:var(--red)}.yellow{background:var(--yellow)}.green{background:var(--green)}
+    .title{text-align:center;color:#d9ddd6;font-size:25px;letter-spacing:2px}.demo{text-align:right;color:var(--accent2);font-size:19px;letter-spacing:3px}
+    .viewport{position:absolute;left:0;right:0;top:92px;bottom:0;overflow:hidden;background:#0e1511}
+    .world{position:absolute;inset:0;display:grid;grid-template-columns:286px 1fr;transform-origin:72% 84%;will-change:transform}
+    .sidebar{background:#121a16;border-right:2px solid #2a362f;padding:37px 25px;display:flex;flex-direction:column;gap:13px}
+    .brand{display:flex;align-items:center;gap:15px;margin:0 10px 30px}.brandmark{width:44px;height:44px;border:2px solid var(--accent);border-radius:14px;display:grid;place-items:center;color:var(--accent2);font-size:25px}.brandname{font-size:27px}
+    .nav{height:58px;padding:0 18px;border-radius:14px;display:flex;align-items:center;gap:15px;color:#aab4ab;font-size:22px}.nav svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2}.nav.active{background:#242c25;color:var(--fg);box-shadow:inset 3px 0 var(--accent)}
+    .recent-label{font-size:18px;color:#77847b;letter-spacing:2px;margin:27px 14px 6px}.recent{font-size:19px;color:#929d95;padding:14px;border-bottom:1px solid rgba(66,79,70,.44);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.side-footer{margin-top:auto;color:#728077;font-size:18px;padding:12px}
+    .main{position:relative;padding:48px 64px 36px 70px;overflow:hidden;background:radial-gradient(circle at 62% 55%,rgba(200,173,98,.07),transparent 45%),#0f1612}
+    .topline{display:flex;justify-content:space-between;align-items:start}.eyebrow{font-size:19px;letter-spacing:3px;color:var(--accent2);margin-bottom:12px}.heading{font-size:48px;letter-spacing:1px;margin:0}.status{font-size:18px;color:#9ba69e;border:2px solid #334038;border-radius:22px;padding:11px 18px;display:flex;align-items:center;gap:10px}.status-dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 14px rgba(40,200,64,.58);will-change:transform,opacity}
+    .canvas{position:relative;height:660px;margin-top:30px}
+    .empty{position:absolute;inset:65px 100px 180px;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#8e9a91}.empty-icon{width:92px;height:92px;border-radius:28px;border:2px solid #3b493f;display:grid;place-items:center;margin-bottom:24px;color:var(--accent)}.empty-icon svg{width:48px;height:48px;stroke:currentColor;fill:none;stroke-width:1.8}.empty h2{font-size:34px;color:#d9ddd5;margin:0 0 12px}.empty p{font-size:22px;margin:0;color:#89968d}
+    .composer{position:absolute;left:34px;right:20px;bottom:10px;min-height:154px;border:2px solid #46544b;border-radius:26px;background:#18211c;box-shadow:0 24px 55px rgba(0,0,0,.28),0 0 0 1px rgba(200,173,98,.08);padding:27px 104px 54px 31px}
+    .inputline{font-size:29px;line-height:1.46;color:#f0eee6;min-height:44px;max-width:1120px;white-space:normal}.placeholder{color:#7f8b83}.caret{display:inline-block;width:3px;height:31px;background:var(--accent2);vertical-align:-5px;margin-left:3px}
+    .tools{position:absolute;left:30px;bottom:17px;display:flex;gap:15px;align-items:center;color:#849087;font-size:18px}.tool{border:1px solid #3a473e;border-radius:14px;padding:6px 11px}.send{position:absolute;right:24px;bottom:24px;width:58px;height:58px;border-radius:18px;background:var(--accent);color:#151a16;display:grid;place-items:center;box-shadow:0 8px 22px rgba(200,173,98,.23);transform-origin:50% 50%}.send svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:2.4}
+    .submitted{position:absolute;right:20px;bottom:22px;width:690px;min-height:122px;border:2px solid #6b6040;border-radius:24px;background:#22261e;padding:23px 28px;opacity:0}.submitted .label{color:var(--accent2);font-size:18px;letter-spacing:2px;margin-bottom:10px}.submitted .goal{font-size:24px;line-height:1.45}
+    .processing{position:absolute;left:75px;right:30px;top:70px;opacity:0}.process-head{display:flex;align-items:center;gap:17px;font-size:27px;margin-bottom:28px}.spinner{width:28px;height:28px;border:3px solid #58645c;border-top-color:var(--accent);border-radius:50%}.process-line{height:6px;background:#2d3931;border-radius:6px;overflow:hidden}.process-fill{display:block;width:100%;height:100%;background:var(--accent);transform:scaleX(0);transform-origin:left}
+    .plan{position:absolute;left:60px;right:30px;top:30px;opacity:0}.plan-head{display:flex;align-items:end;justify-content:space-between;border-bottom:2px solid #354139;padding-bottom:20px;margin-bottom:22px}.plan h2{margin:0;font-size:36px}.plan-note{font-size:18px;color:#9aa69e}.steps{display:grid;gap:15px}.step{display:grid;grid-template-columns:62px 1fr 140px;align-items:center;min-height:92px;padding:0 26px;border:2px solid #354139;border-radius:20px;background:#18211c;opacity:0}.step-num{font-size:21px;color:var(--accent2)}.step-title{font-size:25px}.step-desc{font-size:18px;color:#909c94;margin-top:5px}.step-state{text-align:right;font-size:18px;color:#a8b3aa}.step:first-child{border-color:#746943;background:#22251e}.step:first-child .step-state{color:var(--accent2)}
+    .cursor-pointer{position:absolute;z-index:8;width:44px;height:52px;right:49px;bottom:55px;opacity:0;filter:drop-shadow(0 5px 6px rgba(0,0,0,.4));transform-origin:5px 5px}.cursor-pointer path{fill:#f2efe5;stroke:#111814;stroke-width:2}
+  </style>
+</head>
+<body>
+<div class="clip" data-composition-id="mac-interface-demo" data-width="1920" data-height="1080" data-duration="10">
+  <div class="ambient" data-layout-ignore></div>
+  <div class="window" data-hf-id="app-window">
+    <div class="titlebar"><div class="lights"><i class="light red"></i><i class="light yellow"></i><i class="light green"></i></div><div class="title">AI 工作台</div><div class="demo">界面演示</div></div>
+    <div class="viewport"><div class="world" id="world" data-hf-id="workspace-camera" data-layout-allow-overflow>
+      <aside class="sidebar"><div class="brand"><div class="brandmark">A</div><div class="brandname">任务助手</div></div>
+        <div class="nav active"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 9h8M8 13h5"/></svg>新建任务</div>
+        <div class="nav"><svg viewBox="0 0 24 24"><path d="M4 6h6l2 2h8v10H4z"/></svg>项目</div>
+        <div class="nav"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg>工具</div>
+        <div class="recent-label">最近任务</div><div class="recent">整理课程重点</div><div class="recent">生成内容选题</div><div class="recent">分析用户反馈</div><div class="side-footer">本地工作区 · 已连接</div>
+      </aside>
+      <main class="main"><div class="topline"><div><div class="eyebrow">新任务</div><h1 class="heading">今天想完成什么？</h1></div><div class="status"><span class="status-dot"></span>Agent 就绪</div></div>
+        <div class="canvas">
+          <div class="empty" id="empty"><div class="empty-icon"><svg viewBox="0 0 48 48"><path d="M24 5v38M5 24h38M11 11l26 26M37 11 11 37"/></svg></div><h2>只需要告诉我目标</h2><p>我会先分析需求，再给出执行计划</p></div>
+          <div class="composer" id="composer" data-hf-id="goal-composer"><div class="inputline"><span id="typedText" class="placeholder">描述你想完成的事情</span><span class="caret" id="caret"></span></div><div class="tools"><span class="tool">＋ 添加资料</span><span>规划模式</span></div><div class="send" id="sendButton" data-hf-id="send-button"><svg viewBox="0 0 24 24"><path d="M12 19V5m0 0-6 6m6-6 6 6"/></svg></div></div>
+          <div class="submitted" id="submitted"><div class="label">目标已提交</div><div class="goal">开发一个 AI 文案工具，支持用户输入需求，生成不同平台的文案</div></div>
+          <div class="processing" id="processing"><div class="process-head"><span class="spinner" id="spinner"></span><span>正在拆解目标与依赖关系</span></div><div class="process-line"><span class="process-fill" id="processFill"></span></div></div>
+          <div class="plan" id="plan" data-hf-id="generated-plan"><div class="plan-head"><h2>先把目标拆成三步</h2><div class="plan-note">根据你的目标生成 · 可随时调整</div></div><div class="steps">
+            <div class="step"><div class="step-num">01</div><div><div class="step-title">搭建输入界面</div><div class="step-desc">接收主题、语气与平台要求</div></div><div class="step-state">下一步</div></div>
+            <div class="step"><div class="step-num">02</div><div><div class="step-title">设计生成逻辑</div><div class="step-desc">按不同平台组织内容结构</div></div><div class="step-state">待执行</div></div>
+            <div class="step"><div class="step-num">03</div><div><div class="step-title">测试与预览</div><div class="step-desc">检查输出并保留修改入口</div></div><div class="step-state">待执行</div></div>
+          </div></div>
+          <svg class="cursor-pointer" id="pointer" viewBox="0 0 44 52" data-layout-ignore><path d="M4 3 36 31 22 32 30 47 22 51 14 35 4 45Z"/></svg>
+        </div>
+      </main>
+    </div></div>
+  </div>
+  <div class="vignette" data-layout-ignore></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script><script src="./scene-state.cjs"></script>
+<script>
+document.fonts.ready.then(() => {
+  const tl=gsap.timeline({paused:true});
+  const world=document.getElementById('world'),typed=document.getElementById('typedText'),caret=document.getElementById('caret');
+  const cam={scale:1,x:0,y:0};const applyCam=()=>{world.style.transform=`translate(${cam.x}px,${cam.y}px) scale(${cam.scale})`};applyCam();
+  gsap.set('.window',{opacity:0,scale:.975});gsap.set('#pointer',{autoAlpha:0,x:-260,y:-100});
+  gsap.set(['#submitted','#processing','#plan'],{autoAlpha:0});gsap.set('.step',{autoAlpha:0,y:14});
+  tl.addLabel('establish',0).to('.window',{opacity:1,scale:1,duration:.72,ease:'power3.out'},.08);
+  tl.addLabel('focus',1.1).to(cam,{scale:1.34,x:-128,y:-112,duration:.82,ease:'power3.inOut',onUpdate:applyCam},1.1);
+  const typing={t:0};
+  tl.addLabel('input',1.92).to(typing,{t:2.05,duration:2.05,ease:'none',onUpdate:()=>{const value=SceneState.textAt(typing.t);typed.textContent=value||'描述你想完成的事情';typed.classList.toggle('placeholder',!value);caret.style.opacity=Math.sin(typing.t*Math.PI*4)>0?'1':'0'}},1.92);
+  tl.to('#pointer',{autoAlpha:1,x:0,y:0,duration:.56,ease:'power2.inOut'},3.84);
+  tl.addLabel('submit',4.4).to(['#sendButton','#pointer'],{scale:.9,duration:.12,ease:'power1.in'},4.4).to(['#sendButton','#pointer'],{scale:1,duration:.3,ease:'back.out(1.8)'},4.53);
+  tl.set(['#composer','#empty'],{autoAlpha:0},4.65).set('#submitted',{autoAlpha:1},4.66).fromTo('#submitted',{y:18,scale:.97},{y:0,scale:1,duration:.38,ease:'power3.out',immediateRender:false},4.66).to('#pointer',{autoAlpha:0,duration:.18},4.64);
+  tl.to(cam,{scale:1,x:0,y:0,duration:.86,ease:'power3.inOut',onUpdate:applyCam},4.62);
+  tl.addLabel('processing',5.45).to('#submitted',{autoAlpha:0,y:-10,duration:.2},5.45).set('#processing',{autoAlpha:1},5.46).fromTo('#processing',{y:16},{y:0,duration:.28,ease:'power2.out',immediateRender:false},5.46).fromTo('#processFill',{scaleX:0},{scaleX:1,duration:.75,ease:'power2.inOut',immediateRender:false},5.5).to('#spinner',{rotation:270,duration:.75,ease:'none'},5.5);
+  tl.addLabel('result',6.3).set('#processing',{autoAlpha:0},6.3).set('#plan',{autoAlpha:1},6.32).fromTo('#plan',{y:18},{y:0,duration:.38,ease:'power3.out',immediateRender:false},6.32).fromTo('.step',{autoAlpha:0,y:14},{autoAlpha:1,y:0,duration:.36,stagger:.22,ease:'power3.out',immediateRender:false},6.62);
+  tl.fromTo('.step:first-child',{borderColor:'#354139'},{borderColor:'#9b8550',duration:.45,ease:'power2.out',immediateRender:false},7.4);
+  tl.fromTo('.status-dot',{scale:.92,opacity:.72},{scale:1.18,opacity:1,duration:1.15,yoyo:true,repeat:1,ease:'sine.inOut',immediateRender:false},7.55);
+  window.__timelines['mac-interface-demo']=tl;if(window.__hfForceTimelineRebind)window.__hfForceTimelineRebind();
+});
+</script>
+</body></html>

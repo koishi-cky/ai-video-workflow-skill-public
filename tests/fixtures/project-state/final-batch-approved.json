@@ -1,0 +1,6 @@
+{
+  "shots": [{"id": "S001", "order": 1, "startMs": 0, "status": "approved"}],
+  "music": {"approved": true},
+  "adminDirective": {"approved": true, "action": "build-shot", "shotIds": ["S001"]},
+  "finalAssembly": {"approved": false, "phrase": "可以"}
+}

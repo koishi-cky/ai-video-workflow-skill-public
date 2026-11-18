@@ -1,0 +1,8 @@
+{
+  "voice": {"confirmed": false},
+  "characterIp": {"confirmed": false},
+  "cta": {"confirmed": false},
+  "requiredImages": {"confirmed": false},
+  "alignment": {"verified": false},
+  "shots": []
+}

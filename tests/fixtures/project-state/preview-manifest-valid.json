@@ -1,0 +1,19 @@
+{
+  "previewManifestCurrent": true,
+  "previewManifest": [
+    {"shotId": "S001", "version": "v3", "status": "waiting_for_approval", "order": 1},
+    {"shotId": "S002", "version": "v2", "status": "changes_requested", "order": 2},
+    {"shotId": "S003", "version": "v1", "status": "approved", "order": 3}
+  ],
+  "batchApproval": {"phrase": "看起来不错"},
+  "actionAuthorization": {
+    "approved": true,
+    "action": "assemble-preview",
+    "shotIds": ["S001", "S002", "S003"]
+  },
+  "shots": [
+    {"id": "S001", "currentVersion": "v3", "status": "waiting_for_approval"},
+    {"id": "S002", "currentVersion": "v2", "status": "changes_requested"},
+    {"id": "S003", "currentVersion": "v1", "status": "approved"}
+  ]
+}
